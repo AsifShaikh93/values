@@ -1042,10 +1042,6 @@ grafana:
     autoMount: true
 
   sidecar:
-  additionalDataSources:
-    - name: Loki
-      type: loki
-      url: http://loki-loki-distributed-query-frontend.monitor:3100
     dashboards:
       enabled: true
       label: grafana_dashboard
@@ -1104,6 +1100,12 @@ grafana:
       exemplarTraceIdDestinations: {}
         # datasourceUid: Jaeger
         # traceIdLabelName: trace_id
+        
+  additionalDataSources:
+    - name: Loki
+      type: loki
+      url: http://loki-loki-distributed-query-frontend.monitor:3100
+      
       alertmanager:
         enabled: true
         name: Alertmanager
